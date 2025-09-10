@@ -107,17 +107,16 @@ function displayMenuItems(menuItems) {
   sectionCenter.innerHTML = displayitems.join("");
 }
 
-function displayMenuButtons() {
+function displayMenuButtons(){
   const categories = menuitems.reduce(
-    function (values, item) {
-      if (!values.includes(item.category)) {
-        values.push(item.category);
+    function (values,item){
+      if(!values.includes(item.category)){
+        values.push(item.category)
       }
-      return values;
-    },
-    ["all"]
-  );
-
+      return values
+    }
+    ,["all"]
+  )
   const categoryBtns = categories
     .map(function (category) {
       return `<button type="button" class="filter-btn" data-id=${category}>${category}</button>`;
@@ -129,7 +128,7 @@ function displayMenuButtons() {
   const filterBtns = btnContainer.querySelectorAll(".filter-btn");
 
   filterBtns.forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
+    btn.addEventListener("click", function (e) { 
       const category = e.currentTarget.dataset.id;
       const menuCategory = menuitems.filter(function (menuItem) {
         if (menuItem.category === category) {
