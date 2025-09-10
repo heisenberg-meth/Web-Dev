@@ -18,16 +18,19 @@ navToggle.addEventListener("click", function () {
 const navbar = document.getElementById("nav");
 const topLink = document.querySelector(".top-link");
 
-windows.addEventListener("scroll",function(){
-    const scrollHeight = window.pageYOffset;
+windows.addEventListener("scroll", function () {
+  const scrollHeight = window.pageYOffset;
   const navHeight = navbar.getBoundingClientRect().height;
-  if(scrollHeight>navHeight){
-    navbar.classList.toggle("fixed-nav")
-  }else{
-    navbar.classList.toggle("fixed-top")
+  if (scrollHeight > navHeight) {
+    navbar.classList.toggle("fixed-nav");
+  } else {
+    navbar.classList.toggle("fixed-top");
   }
-  if(scrollHeight>500){
-    console.log("hello")
-    topLink.classList.
+  if (scrollHeight > 500) {
+    console.log("hello");
+    topLink.classList.toggle("show-link");
+  } else {
+    topLink.classList.toggle("show-link");
   }
-})
+});
+
