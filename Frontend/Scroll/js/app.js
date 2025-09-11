@@ -8,15 +8,14 @@ const links = document.querySelector(".links");
 const scrollLinks = document.querySelectorAll(".scroll-link");
 
 navToggle.addEventListener("click", function () {
-  const linksHeight = links.getBoundingClientRect().height;
   const containerHeight = linksContainer.getBoundingClientRect().height;
+  const linksheight = links.getBoundingClientRect().height;
   if (containerHeight === 0) {
-    linksContainer.style.height = `${linksHeight}px`;
+    linksContainer.style.height = `${linksheight}px`;
   } else {
     linksContainer.style.height = 0;
   }
 });
-
 window.addEventListener("scroll", function () {
   const scrollHeight = window.pageYOffset;
   const navHeight = navbar.getBoundingClientRect().height;
