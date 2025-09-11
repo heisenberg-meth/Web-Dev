@@ -170,7 +170,7 @@ p {
 }
 /* section */
 .section {
-  padding-bottom: 5rem;
+  padding: 5% 0px;
 }
 
 .section-center {
@@ -243,6 +243,9 @@ nav {
 .show-links {
   height: 200px;
 }
+.Low-btn{
+  z-index: 99;
+}
 .links a {
   background: var(--clr-white);
   color: var(--clr-grey-5);
@@ -304,7 +307,7 @@ header {
     url(../img/hero-bcg.jpeg) center/cover no-repeat;
 }
 .banner {
-  min-height: 100vh;
+  min-height: 80vh;
   display: grid;
   place-items: center;
   text-align: center;
@@ -335,7 +338,7 @@ header {
 #about,
 #services,
 #tours {
-  height: 80vh;
+  height: 100vh;
 }
 #services {
   background: var(--clr-white);
