@@ -1,29 +1,77 @@
-const alert = document.querySelector(".alert");
 const form = document.querySelector(".grocery-form");
-const grocery = document.querySelector(".grocery");
+const alert = document.querySelector(".alert");
+const grocery = document.getElementById("grocery");
 const submitBtn = document.querySelector(".submit-btn");
 const container = document.querySelector(".grocery-container");
 const list = document.querySelector(".grocery-list");
 const clearBtn = document.querySelector(".clear-btn");
-
+// edit option
 let editElement;
 let editFlag = false;
-let editId = "";
+let editID = "";
 
-form.addEventListener('submit', addItem)
+form.addEventListener("submit", addItems);
+clearBtn.addEventListener('click',clearItems)
 
-function addItem(e){
-    e.preventDefault()
-    const value = grocery.value
-    if(value){
-        console.log("Value Is Thappu");
+function addItems(e) {
+  e.preventDefault();
+  const value = grocery.value;
+
+  const id = new Date().getTime().toString();
+  if (value && !editFlag) {
+    const element = document.createElement("article");
+    element.classList.add("grocery-item");
+    const attr = document.createAttribute("data-id");
+    attr.value = id;
+    element.setAttributeNode(attr);
+    element.innerHTML = `<p class="title">${value}</p>
+            <div class="btn-container">
+              <!-- edit btn -->
+              <button type="button" class="edit-btn">
+                <i class="fas fa-edit"></i>
+              </button>
+              <!-- delete btn -->
+              <button type="button" class="delete-btn">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>`;
+    list.appendChild(element);
+    displayAlert("item added", "success");
+
+    container.classList.add("show-container");
+
+    addtoLocalStorage(id, value);
+    setBackToDefault();
+  } else if (value && editFlag) {
+    console.log("Editing");
+  } else {
+    displayAlert("Please enter the value", "danger");
+  }
+}
+function displayAlert(text, action) {
+  alert.textContent = text;
+  alert.classList.add(`alert-${action}`);
+  setTimeout(function () {
+    alert.textContent = "";
+    alert.classList.remove(`alert-${action}`);
+  }, 1000);
+}
+function clearItems(){
+    const items = document.querySelectorAll('.grocery-item')
+    if(items.length>0){
+        items.forEach(function(item){
+            list.removeChild(item)
+        })
     }
-    const id = new Date().getTime().toString()
-    if(value !== '' && editFlag===false){
-        console.log("Add item to the list");
-    }else if (value !=='' && editFlag === true){
-        "Editing"
-    } else{
-        "Empty"
-    }
+    container.classList.remove('show-container')
+    displayAlert('Youre List is empty', "danger")
+}
+function setBackToDefault() {
+    grocery.value = ""
+    editFlag = false
+    editID = ""
+    submitBtn.textContent = "submit"
+}
+function addtoLocalStorage(id, value) {
+  console.log("Added to local storage");
 }

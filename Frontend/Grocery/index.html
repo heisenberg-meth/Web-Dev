@@ -12,18 +12,24 @@
   </head>
   <body>
     <section class="section-center">
-      <from class="grocery-form">
+      <form class="grocery-form">
         <p class="alert"></p>
         <h3>Grocery List</h3>
         <div class="form-control">
-          <input type="text" placeholder="Muttai" id="grocery" required />
+          <input
+            type="text"
+            placeholder="egg"
+            id="grocery"
+            required
+          />
           <button class="submit-btn" type="submit">Submit</button>
         </div>
-      </from>
+      </form>
       <div class="grocery-container">
         <div class="grocery-list">
-          <button class="clear-btn">Clear Items</button>
+          <article class="grocery-item"></article>
         </div>
+        <button class="clear-btn">Clear Items</button>
       </div>
     </section>
     <script src="./js/app.js"></script>
