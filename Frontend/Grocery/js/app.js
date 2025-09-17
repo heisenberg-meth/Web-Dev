@@ -72,7 +72,7 @@ function deleteitems(e) {
   }
   displayAlert("Item removed", "danger");
   setBackToDefault();
-  // removeFromLocalStorage(id)
+  removeFromLocalStorage(id);
 }
 function edititems(e) {
   const element = e.currentTarget.parentElement.parentElement;
@@ -131,12 +131,9 @@ function createListItem(id, value) {
               </button>
             </div>
           `;
-  // add event listeners to both buttons;
   const deleteBtn = element.querySelector(".delete-btn");
   deleteBtn.addEventListener("click", deleteitems);
   const editBtn = element.querySelector(".edit-btn");
   editBtn.addEventListener("click", edititems);
-
-  // append child
   list.appendChild(element);
 }
