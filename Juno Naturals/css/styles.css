@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+/*Custom Fonts*/
+.nunitosans {
+  font-family: "Nunito Sans", sans-serif;
+}
+.inter {
+  font-family: "Inter", sans-serif;
+}
+body {
+  background: linear-gradient(
+    180deg,
+    rgba(250, 245, 255, 1) 48%,
+    rgba(240, 253, 250, 0) 100%
+  );
+}
+.junohead {
+  color: #6b21a8;
+}
+.custombtm {
+  border-bottom: 5px solid
+    linear-gradient(
+      to right,
+      #d8b4fe,
+      #afc3ff,
+      #7dd1ff,
+      #48dcff,
+      #2ce4fa,
+      #2ae9e7,
+      #4dedce,
+      #74eeb3,
+      #91ef96,
+      #b3ed78,
+      #d7e85c,
+      #fde047
+    );
+}
+.tipnote {
+  background-color: #f0fdfa;
+}
+.formhead {
+  color: #0f766e;
+}
+.form-section {
+  margin: 0 auto;
+}
+select,
+input {
+  box-shadow: 0px 1px 4px 0px #00000029;
+}
+.section-title {
+  color: #0b7c74;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+label {
+  font-weight: 500;
+  color: #333;
+}
+/* .form-control,
+.form-select {
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+} */
+.form-control:focus,
+.form-select:focus {
+  border-color: #0b7c74;
+  box-shadow: 0px 1px 4px 0px #00000029;
+}
+.required::after {
+  content: " *";
+  color: red;
+}
+.purplediv {
+  background-color: #faf5ff;
+  width: 50%;
+  margin: auto;
+}
+.greendiv {
+  background-color: #f0fdfa;
+  height: 146vh;
+  width: 50%;
+  margin: auto;
+}
+.yellowdiv {
+  background-color: #fefce8;
+}
+.innergreendiv {
+  background-color: #f0fdfa;
+}
+.cancelhead {
+  color: #7e22ce;
+}
+.greydiv {
+  background-color: #f9fafb;
+}
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+.coursebtn {
+  border: none;
+  background: transparent;
+  color: #333;
+  font-weight: 500;
+  padding: 10px 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Active button */
+.coursebtn.btnactive {
+  font-weight: 600;
+  color: #4b2aad;
+}
+
+/* Add broad underline using pseudo-element */
+.coursebtn.btnactive::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* adjust based on button height */
+  width: 100%;
+  height: 4px; /* thickness of underline */
+  background-color: #4b2aad; /* choose your accent color */
+  border-radius: 3px;
+}
+@media screen and (max-width: 990px) {
+  .greendiv {
+    height: auto;
+  }
+  .purplediv {
+    width: 100% !important;
+    margin: auto !important;
+  }
+  .greendiv {
+    width: 100% !important;
+    margin: auto !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .greendiv {
+    height: auto !important;
+  }
+}
