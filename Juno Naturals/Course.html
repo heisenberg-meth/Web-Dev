@@ -53,7 +53,7 @@
             <div class="bg-white py-5 col-11 mx-auto rounded-4">
               <div class="col-11 mx-auto">
                 <div class="form-section bg-white rounded-4">
-                  <form>
+                  <form class="needs-validation">
                     <div class="content" id="courseenrollment">
                       <h3>🌈 Course Enrollment</h3>
                       <div class="tipnote">
@@ -69,54 +69,104 @@
                       <h5 class="section-title">Personal Information</h5>
                       <div class="row mb-4">
                         <div class="col-md-6">
-                          <label class="form-label required">Full Name</label>
+                          <label class="form-label required" id="name"
+                            >Full Name</label
+                          >
                           <input
                             type="text"
                             class="form-control rounded"
                             required
                           />
+                          <div class="valid-feedback">Valid Name!</div>
+                          <div class="invalid-feedback">
+                            Please enter a Name.
+                          </div>
                         </div>
                         <div class="col-md-6">
                           <label class="form-label required"
                             >Age / Date of Birth</label
                           >
-                          <input type="date" class="form-control" required />
+                          <input
+                            type="date"
+                            class="form-control"
+                            required
+                            id="age"
+                          />
+                          <div class="valid-feedback">Valid age!</div>
+                          <div class="invalid-feedback">
+                            Please enter a Valid Age.
+                          </div>
                         </div>
                         <div class="col-md-6">
                           <label class="form-label required">Gender</label>
-                          <select class="form-select" required>
+                          <select class="form-select" required id="gender">
                             <option value="">Select an option</option>
                             <option>Male</option>
                             <option>Female</option>
                             <option>Other</option>
                           </select>
+                          <div class="valid-feedback">Valid gender!</div>
+                          <div class="invalid-feedback">
+                            Please enter a valid gender.
+                          </div>
                         </div>
                         <div class="col-md-6">
                           <label class="form-label required">Email</label>
-                          <input type="email" class="form-control" required />
+                          <input
+                            type="email"
+                            class="form-control"
+                            required
+                            id="email"
+                          />
+                          <div class="valid-feedback">Valid Mail!</div>
+                          <div class="invalid-feedback">
+                            Please enter a valid mail.
+                          </div>
                         </div>
                         <div class="col-md-6">
                           <label class="form-label required"
                             >Phone / WhatsApp</label
                           >
-                          <input type="text" class="form-control" required />
+                          <input
+                            type="text"
+                            class="form-control"
+                            required
+                            id="wnumber"
+                          />
+                          <div class="valid-feedback">Valid number!</div>
+                          <div class="invalid-feedback">
+                            Please enter a valid number.
+                          </div>
                         </div>
                         <div class="col-md-6">
                           <label class="form-label required">Address</label>
-                          <input type="text" class="form-control" required />
+                          <input
+                            type="text"
+                            class="form-control"
+                            required
+                            id="address"
+                          />
+                          <div class="valid-feedback">Valid address!</div>
+                          <div class="invalid-feedback">
+                            Please enter a valid address.
+                          </div>
                         </div>
                       </div>
                       <h5 class="section-title mt-4">Course Selection</h5>
                       <div class="row g-3 mb-3">
                         <div class="col-md-12">
                           <label class="form-label required">Course</label>
-                          <select class="form-select" required>
+                          <select class="form-select" required id="course">
                             <option value="">Select an option</option>
                             <option>Yoga & Meditation</option>
                             <option>Holistic Nutrition</option>
                             <option>Natural Healing Therapy</option>
                             <option>Energy Balancing</option>
                           </select>
+                          <div class="valid-feedback">Valid course!</div>
+                          <div class="invalid-feedback">
+                            Please enter a valid course.
+                          </div>
                         </div>
                       </div>
                       <div
@@ -437,7 +487,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="content" id="consultation">
+                    <div class="content active" id="consultation">
                       <h3>💆‍♀️ Personalized Holistic Consultation</h3>
                       <div class="tipnote">
                         <p class="lh-lg py-4 px-4 col-9">
